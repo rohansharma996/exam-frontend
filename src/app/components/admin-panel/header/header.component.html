@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+  <a style="color: white"class="navbar-brand" ><strong>ADMIN PANEL</strong></a>
+  <ul style="min-width: 600px;" class="navbar-nav">
+    <li class="nav-item">
+        
+      <a *ngIf="isloggedIn" class="nav-link" routerLink="/addgroup">
+        Add Group
+      </a>
+      <a style="cursor: pointer;" *ngIf="!isloggedIn" class="nav-link" (click)="reload()">
+        Add Group
+      </a>
+    </li>
+    <li class="nav-item">
+        <a *ngIf="isloggedIn" class="nav-link" routerLink="/viewgroup">
+          View Group
+        </a>
+        <a style="cursor: pointer;" *ngIf="!isloggedIn" class="nav-link" (click)="reload()">
+          View Group
+        </a>
+      </li>
+      <li class="nav-item">
+          <a *ngIf="isloggedIn" class="nav-link" routerLink="/addsubject">
+            Add Subject
+          </a>
+          <a style="cursor: pointer;" *ngIf="!isloggedIn" class="nav-link" (click)="reload()">
+            Add Subject
+          </a>
+        </li>
+        <li class="nav-item">
+            <a *ngIf="isloggedIn" class="nav-link" routerLink="/payment-history">
+              Payment History
+            </a>
+            <a style="cursor: pointer;" *ngIf="!isloggedIn" class="nav-link" (click)="reload()">
+              Payment History
+            </a>
+          </li>
+          <li class="nav-item">
+              <a *ngIf="isloggedIn" class="nav-link" routerLink="/result">
+                Result
+              </a>
+              <a style="cursor: pointer;" *ngIf="!isloggedIn" class="nav-link" (click)="reload()">
+                Result
+              </a>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">
+                  View Users
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li style="cursor: pointer" class="pl-2" routerLink="/paid-users"><strong>Paid Users</strong></li>
+                  <li style="cursor: pointer" class="pl-2" routerLink="/free-users"><strong>Free Users</strong></li>
+                </ul>
+                </div>
+              </li>
+  </ul>
+  <ul style="padding-left:340px;"class="navbar-nav">
+      <li class="nav-item">
+        <div class="dropdown">
+          <a *ngIf="!isloggedIn" style="cursor: pointer; padding-left: 110px" class="nav-link" (click)="reload()">Login</a> 
+          <a *ngIf="isloggedIn" style="cursor: pointer;" class="nav-link dropdown-toggle" data-toggle="dropdown">
+            Welcome Admin
+          </a>
+          <ul class="dropdown-menu">
+            <li style="cursor: pointer;" (click)="logout()" class="pl-2"><strong>Logout</strong></li>
+          </ul>
+          </div>
+        </li>
+  </ul>
+</nav>

@@ -1,0 +1,46 @@
+<app-header></app-header>
+<div class="mt-4 container">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <h2><strong>SUBJECTS</strong></h2>
+    </div>
+    <div class="col-12 col-md-6">
+      <button style="float: right; min-width: 200px;"class="btn btn-success" data-toggle="modal" data-target="#addsubject">Add Subject</button>
+    </div>
+  </div>
+  <div class=" mt-5 row">
+    <table>
+      <tr>
+        
+        <th>Name</th>
+      </tr>
+      <tr *ngFor="let sub of getsubject">
+        
+        <th>{{sub.subjectName}}</th>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!--ADD Subject MODAL-->
+
+<div id="addsubject" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">
+          <h5><strong>Add Subject</strong></h5>
+        </div>
+        <a style="cursor:pointer" data-dismiss="modal"><strong>X</strong></a>
+      </div>
+      <div class="modal-body">
+         <div class="form-group">
+           <label for="subject1"><strong>Subject Name :</strong></label>
+           <input type="text" name="subject" [(ngModel)]="subject" id="subject1" placeholder="Subject" class="form-control">
+         </div> 
+         <button type="button" style="min-width: 100px;" (click)="addSubject()" class="btn btn-success">ADD</button>
+          <h6 class="pt-3">{{success}}</h6>
+        </div>
+    </div>
+  </div>
+</div>

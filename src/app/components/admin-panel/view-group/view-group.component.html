@@ -1,0 +1,78 @@
+<app-header></app-header>
+  <div class="container">
+      <div class="row mt-3 mb-3 box">
+      <div class="col-12 col-md-12">
+        <table class="mb-2 mt-2">
+            <tr>
+              <th>Package</th>
+              <th>Price</th>
+              <th>Change</th>
+              <th>Add Test</th>
+              <th>Add Questions</th>
+            </tr>
+            <tr *ngFor="let test of testgroup">
+              <th><span style="display: block">{{test.groupName}}</span>
+              <span style="display:inline"><table><tr class="no">
+                <td><a href="{{test.details_pdf}}">Details</a></td>
+                <td><a href="{{test.schedule_pdf}}">Schedule</a></td>
+              </tr></table></span></th>
+              <th>{{test.price}}</th>
+              <th><a href="">Edit</a></th>
+              <th><a style="cursor: pointer;"data-toggle="modal" data-target="#addtest">Add</a></th>
+              <th><a style="cursor: pointer;"data-toggle="modal" data-target="#addtest">Add</a></th>
+            </tr>
+            
+        </table>
+      </div>
+      </div>
+    </div>
+
+    <!--Add Questions Modal-->
+
+    <div id="addtest"class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+           <div class="modal-title"><strong>Add Test</strong></div>
+           <span data-dismiss="modal"><strong>X</strong></span>
+          </div>
+          <div class="modal-body">
+
+          <div class="form-group">
+            <label for="test"><strong>Test No.</strong></label>
+            <input id="test" type="text" class="form-control" placeholder="Test Number">
+          </div>
+
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose Subject
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li *ngFor="let sub of getsubs">{{sub.subjectName}}</li>
+              </ul>
+            </div>
+
+            
+            <button class="btn btn-primary mt-3" data-toggle="collapse" data-target="#addquestion">Add Question
+            </button>
+            <div class="collapse" id="addquestion">
+            <div class="form-group">
+              <label for="question"></label>
+              <textarea name="question" id="question" class="form-control" placeholder="Type Question Here"></textarea>
+
+              <input type="text" name="option1" class="form-control" id="option1" placeholder="Option 1">
+              <input type="text" name="option2" class="form-control" id="option2" placeholder="Option 2">
+              <input type="text" name="option3" class="form-control" id="option3" placeholder="Option 3">
+              <input type="text" name="option4" class="form-control" id="option4" placeholder="Option 4">
+            </div>
+
+            <div class="form-group">
+              <label for="correct"><strong>Correct :</strong></label>
+              <input type="text" name="correct" class="form-control" id="correct" placeholder="Correct Answer">
+            </div>
+            
+            <button class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

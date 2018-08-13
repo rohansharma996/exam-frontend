@@ -1,0 +1,22 @@
+table{
+    background: #ddd;
+    width:100%;
+}
+
+th{
+    padding-left:0px;
+    min-width: 150px;
+    text-align: center;
+}
+tr{
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+}
+th,td{
+    align-content: center;
+    justify-content: center;
+    
+
+}
