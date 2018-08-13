@@ -14,6 +14,7 @@ export class ViewGroupComponent implements OnInit {
   allowedtime:any;
   getsubs:any;
   fail:any;
+  data:any;
   constructor(private test:TestgroupService,private local:LocalService) { }
 
   ngOnInit() {
@@ -36,4 +37,19 @@ export class ViewGroupComponent implements OnInit {
        console.log(err);
     });
   }
+
+  addTest(){
+    this.data = {
+
+    }
+    this.local.addTest(this.data).subscribe(res => {
+      
+    })
+  }
+
+
+
+
+
+ // End //
 }

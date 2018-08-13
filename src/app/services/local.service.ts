@@ -15,4 +15,8 @@ export class LocalService {
   getSubject():Observable<any>{
     return this.http.get("http://localhost:3000/admin/get-subject");
   }
+
+  addTest(data):Observable<any>{
+    return this.http.post("http://localhost:3000/admin/add-test",data);
+  }
 }

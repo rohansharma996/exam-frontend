@@ -19,7 +19,7 @@
               <th>{{test.price}}</th>
               <th><a href="">Edit</a></th>
               <th><a style="cursor: pointer;"data-toggle="modal" data-target="#addtest">Add</a></th>
-              <th><a style="cursor: pointer;"data-toggle="modal" data-target="#addtest">Add</a></th>
+              <th><a style="cursor: pointer;"data-toggle="modal" data-target="#addquestion">Add</a></th>
             </tr>
             
         </table>
@@ -27,25 +27,25 @@
       </div>
     </div>
 
-    <!--Add Questions Modal-->
+    <!--Add Test Modal-->
 
     <div id="addtest"class="modal fade">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
            <div class="modal-title"><strong>Add Test</strong></div>
-           <span data-dismiss="modal"><strong>X</strong></span>
+           <span style="cursor: pointer;" data-dismiss="modal"><strong>X</strong></span>
           </div>
           <div class="modal-body">
 
           <div class="form-group">
             <label for="test"><strong>Test No.</strong></label>
-            <input id="test" type="text" class="form-control" placeholder="Test Number">
+            <input id="test" type="text" [(ngModel)]="testnumber" name="testno" class="form-control" placeholder="Test Number">
           </div>
 
           <div class="form-group">
             <label for="time"><strong>Allowed Time (in minutes)</strong></label>
-            <input id="time" type="text" class="form-control" placeholder="Time">
+            <input id="time" type="text" [(ngModel)]="allowedtime" name="allowedtime" class="form-control" placeholder="Time">
           </div>
 
             <div class="dropdown">
@@ -58,11 +58,25 @@
             </div>
 
             
-            <button class="btn btn-primary mt-3" data-toggle="collapse" data-target="#addquestion">Add Question
-            </button>
-            <div class="collapse" id="addquestion">
+           
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Questions Modal    -->
+
+    <div id="addquestion" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title"><strong>Add Questions</strong></div>
+           <span style="cursor: pointer;" data-dismiss="modal"><strong>X</strong></span>
+          </div>
+          <div class="modal-body">
+            
             <div class="form-group">
-              <label for="question"></label>
+              <label for="question"><strong>Question :</strong></label>
               <textarea name="question" id="question" class="form-control" placeholder="Type Question Here"></textarea>
 
               <input type="text" name="option1" class="form-control" id="option1" placeholder="Option 1">
@@ -77,7 +91,7 @@
             </div>
             
             <button class="btn btn-primary">Submit</button>
-            </div>
+            
           </div>
         </div>
       </div>

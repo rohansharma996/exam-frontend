@@ -29,6 +29,9 @@ export class AddSubjectComponent implements OnInit {
      console.log(res);
      this.success = "Subject Saved";
      this.getSubject();
+    },err => {
+      console.log(err);
+      this.success = "Error Saving Subject"
     });
   }
 
