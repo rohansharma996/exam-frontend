@@ -35,13 +35,12 @@ export class AdminPanelComponent implements OnInit {
       res => {
       this.response = JSON.stringify(res);
       console.log(res);
-      if(this.response.error){
-        this.fail = "Wrong email/password"
-      }else{
       localStorage.setItem('user', JSON.stringify(res));
       window.location.href = '/addgroup';
+      },err => {
+        console.log(err);
+      this.fail = "Wrong email/password"
       }
-    }
     );
     
     

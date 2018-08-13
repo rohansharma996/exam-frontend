@@ -58,6 +58,9 @@ export class AddGroupComponent implements OnInit {
         this.response1 = res;
         console.log(res);
         this.sucess = "Group Saved";
+      },err => {
+        this.sucess = "Error Saving Group";
+        console.log(err);
       });
   }
 

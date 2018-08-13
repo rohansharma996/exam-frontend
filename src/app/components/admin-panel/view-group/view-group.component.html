@@ -43,11 +43,17 @@
             <input id="test" type="text" class="form-control" placeholder="Test Number">
           </div>
 
+          <div class="form-group">
+            <label for="time"><strong>Allowed Time (in minutes)</strong></label>
+            <input id="time" type="text" class="form-control" placeholder="Time">
+          </div>
+
             <div class="dropdown">
               <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose Subject
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
                 <li *ngFor="let sub of getsubs">{{sub.subjectName}}</li>
+                <h6>{{fail}}</h6>
               </ul>
             </div>
 
