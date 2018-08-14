@@ -29,6 +29,8 @@ import { AuthService } from './services/auth.service';
 import { TestgroupService } from './services/testgroup.service';
 import { LocalService } from './services/local.service';
 import { TestpageComponent } from './components/user-panel/testpage/testpage.component';
+import { ViewTestComponent } from './components/admin-panel/view-test/view-test.component';
+import { ViewAllComponent } from './components/admin-panel/view-all/view-all.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { TestpageComponent } from './components/user-panel/testpage/testpage.com
     UserHeaderComponent,
     LoginComponent,
     MypackageComponent,
-    TestpageComponent
+    TestpageComponent,
+    ViewTestComponent,
+    ViewAllComponent
   ],
   imports: [
     BrowserModule,
