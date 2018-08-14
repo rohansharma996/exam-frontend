@@ -28,6 +28,7 @@ import { MypackageComponent } from './components/user-panel/mypackage/mypackage.
 import { AuthService } from './services/auth.service';
 import { TestgroupService } from './services/testgroup.service';
 import { LocalService } from './services/local.service';
+import { TestpageComponent } from './components/user-panel/testpage/testpage.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { LocalService } from './services/local.service';
     TestPageComponent,
     UserHeaderComponent,
     LoginComponent,
-    MypackageComponent
+    MypackageComponent,
+    TestpageComponent
   ],
   imports: [
     BrowserModule,
