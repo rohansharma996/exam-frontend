@@ -18,7 +18,7 @@
                 
               </tr></table></span></th>
               <th>{{test.price}}</th>
-              <th><a href="">Edit</a></th>
+              <th><a style="cursor: pointer;" data-toggle="modal" data-target="#edit">Edit</a></th>
               <th><a style="cursor: pointer;"data-toggle="modal" data-target="#addtest">Add</a></th>
               <th><a style="cursor: pointer;"data-toggle="modal" data-target="#addquestion">Add</a></th>
             </tr>
@@ -94,6 +94,77 @@
             
             <button  class="btn btn-primary" (click)="addQuestion">Submit</button>
             
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Modal -->
+
+    <div id="edit" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+              <div class="modal-title"><strong>Edit Group</strong></div>
+              <span style="cursor: pointer;" data-dismiss="modal"><strong>X</strong></span>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="group-name"><strong>Group Name</strong></label>
+              <input type="text" id="group-name" [(ngModel)]="groupname" name="groupname" class="form-control" placeholder="Group Name">
+            </div>  
+            <div class="form-group">
+                <label for="instructions1"><strong>Exam Instructions</strong></label>
+                <textarea id="instructions1" [(ngModel)]="instructions" name="instructions" class="form-control" placeholder="Instructions"></textarea>
+               <!-- <input type="text" id="instructions" class="form-control" placeholder="Instructions">-->
+              </div>  
+              <div class="form-group">
+                  <label for="question-no"><strong>No. of Questions</strong></label>
+                  <input type="number" id="question-no" [(ngModel)]="questions" name="questions" class="form-control" placeholder="No. of Questions">
+                </div>
+                <div class="form-group">
+                    <label for="duration"><strong>Exam Duration</strong></label>
+                    <input type="time" id="duration" [(ngModel)]="examduration" name="examduration" class="form-control" placeholder="Exam Duration">
+                  </div>  
+                  <div class="form-group">
+                      <label for="validity1"><strong>Validity</strong></label>
+                      <input type="time" id="validity1" [(ngModel)]="validity" name="validity" class="form-control" placeholder="Validity">
+                    </div>  
+                    <div class="form-group">
+                        <label for="totalmarks"><strong>Total Marks</strong></label>
+                        <input type="number" id="totalmarks" [(ngModel)]="total_marks" name="total_marks" class="form-control" placeholder="Total Marks">
+                      </div>  
+                      <div class="form-group">
+                          <label for="positivemarks"><strong>Positive Marks</strong></label>
+                          <input type="number" id="positivemarks" [(ngModel)]="positive_marks" name="positive_marks" class="form-control" placeholder="Positive Marks">
+                        </div>  
+                        <div class="form-group">
+                            <label for="negativemarks"><strong>Negative marks</strong></label>
+                            <input type="number" id="negativemarks" [(ngModel)]="negative_marks" name="negative_marks" class="form-control" placeholder="Negative Marks">
+                          </div>      
+                          <div class="form-group">
+                              <label for="price1"><strong>Price</strong></label>
+                              <input type="number" id="price1" [(ngModel)]="price" name="price" class="form-control" placeholder="Price">
+                            </div> 
+                            <div class="form-group">
+                              <label for="details1"><strong>Details</strong></label>
+                              <input type="text" id="details1" [(ngModel)]="details" name="details" class="form-control" placeholder="Paste Details pdf link here">
+                            </div>
+                            <div class="form-group">
+                              <label for="schedule1"><strong>Schedule</strong></label>
+                              <input type="text" id="schedule1" [(ngModel)]="schedule" name="schedule" class="form-control" placeholder="Paste Schedule pdf link here">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject"><strong>Subject</strong></label>
+                                <div class="dropdown">
+                                  <button id="subject" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select</button>
+                                  <ul class="dropdown-menu">
+                                    <li *ngFor="let sub of getsubs" style="cursor: pointer;"class="pl-2"><strong>{{sub.subjectName}}</strong></li>
+                                  </ul>
+                                </div>
+            
+                              </div>    
+                              <button type="button" style="min-width: 200px" class="text-center btn mt-1 btn-primary"><strong>SAVE</strong></button> 
           </div>
         </div>
       </div>

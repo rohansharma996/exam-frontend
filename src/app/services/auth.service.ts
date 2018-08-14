@@ -12,4 +12,11 @@ export class AuthService {
     return this.http.post("http://localhost:3000/admin/login",data);
   }
 
+  userLogin(data){
+    return this.http.post("http://localhost:3000/users/login", data);
+  }
+
+  userRegister(data){
+    return this.http.post("http://localhost:3000/users/register", data);
+  }
 }

@@ -11,6 +11,23 @@ import { ActivatedRoute, Router } from "@angular/router";
 })
 export class ViewGroupComponent implements OnInit {
 
+  //Edit Subject variables//
+  groupname:any;
+  instructions:any;
+  questions:any;
+  examduration:any;
+  validity:any;
+  total_marks:any;
+  positive_marks:any;
+  negative_marks:any;
+  price:any;
+  details:any;
+  schedule:any;
+  ////
+
+
+
+
   testgroup:any;
   testnumber:any;
   allowedtime:any;
