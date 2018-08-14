@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TestgroupService } from './../../../services/testgroup.service';
 import { LocalService } from './../../../services/local.service';
+import swal from 'sweetalert'
+
 
 @Component({
   selector: 'app-add-group',
@@ -57,7 +59,8 @@ export class AddGroupComponent implements OnInit {
       res => {
         this.response1 = res;
         console.log(res);
-        this.sucess = "Group Saved";
+      swal("group added successfully")
+       
       },err => {
         this.sucess = "Error Saving Group";
         console.log(err);

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LocalService } from './../../../services/local.service';
+import swal from 'sweetalert'
+
 
 @Component({
   selector: 'app-add-subject',
@@ -27,7 +29,8 @@ export class AddSubjectComponent implements OnInit {
     this.local.addSubject(this.data).subscribe(res => {
      this.response = res;
      console.log(res);
-     this.success = "Subject Saved";
+     swal("Test added successfully")
+
      this.getSubject();
     },err => {
       console.log(err);

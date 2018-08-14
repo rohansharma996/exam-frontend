@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TestgroupService } from './../../../services/testgroup.service';
 import { LocalService } from './../../../services/local.service';
 import { ActivatedRoute, Router } from "@angular/router";
+import swal from 'sweetalert'
 
 
 @Component({
@@ -110,7 +111,7 @@ export class ViewGroupComponent implements OnInit {
 
     }
     this.local.addTest(this.data).subscribe(res => {
-      
+      swal("Test added successfully")
     })
   }
 
