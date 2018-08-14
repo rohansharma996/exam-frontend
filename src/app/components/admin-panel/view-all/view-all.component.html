@@ -13,11 +13,42 @@
             <th>{{tes.testNo}}</th>
             <th>{{tes.subject}}</th>
             <th>{{tes.allowed_time}}</th>
-            <th><strong>Add Questions</strong></th>
-          
-      
+            <th data-toggle="modal" data-target="#addquestion"><strong>Add Questions</strong></th>
           </tr>
       </table>
     </div>
     </div>
   </div>
+
+  <!-- Add Questions Modal    -->
+
+  <div id="addquestion" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title"><strong>Add Questions</strong></div>
+           <span style="cursor: pointer;" data-dismiss="modal"><strong>X</strong></span>
+          </div>
+          <div class="modal-body">
+            
+            <div class="form-group">
+              <label for="question"><strong>Question :</strong></label>
+              <textarea name="question" [(ngModel)]="question" id="question" class="form-control" placeholder="Type Question Here"></textarea>
+
+              <input type="text" name="option1" class="form-control" id="option1" [(ngModel)]="A" placeholder="Option 1">
+              <input type="text" name="option2" class="form-control" id="option2" [(ngModel)]="B"  placeholder="Option 2">
+              <input type="text" name="option3" class="form-control" id="option3" [(ngModel)]="C"  placeholder="Option 3">
+              <input type="text" name="option4" class="form-control" id="option4" [(ngModel)]="D"  placeholder="Option 4">
+            </div>
+
+            <div class="form-group">
+              <label for="correct"><strong>Correct :</strong></label>
+              <input type="text" name="correct" class="form-control" id="correct" [(ngModel)]="correct" placeholder="Correct Answer">
+            </div>
+            
+            <button  class="btn btn-primary" (click)="addQuestion">Submit</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
