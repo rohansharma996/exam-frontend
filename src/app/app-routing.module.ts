@@ -42,6 +42,9 @@ const routes: Routes = [
   { path: 'userheader', component: UserHeaderComponent},
   { path: 'dashboard', component: DashboardComponent},
   { path: 'mypackage', component: MypackageComponent},
+  { path: 'view-test/:_id', component: MypackageComponent},
+
+
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: PagenotfoundComponent }
 ];

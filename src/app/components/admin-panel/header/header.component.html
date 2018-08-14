@@ -19,6 +19,14 @@
         </a>
       </li>
       <li class="nav-item">
+        <a *ngIf="isloggedIn" class="nav-link" routerLink="/view-test">
+          View test
+        </a>
+        <a style="cursor: pointer;" *ngIf="!isloggedIn" class="nav-link" (click)="reload()">
+          View test
+        </a>
+      </li>
+      <li class="nav-item">
           <a *ngIf="isloggedIn" class="nav-link" routerLink="/addsubject">
             Add Subject
           </a>
