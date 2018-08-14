@@ -21,6 +21,7 @@ import { combineLatest } from 'rxjs';
 import { componentNeedsResolution } from '@angular/core/src/metadata/resource_loading';
 import { MypackageComponent } from './components/user-panel/mypackage/mypackage.component';
 import { ResultSheetComponent } from './components/result-sheet/result-sheet.component';
+import { ViewAllComponent } from './components/admin-panel/view-all/view-all.component';
 
 
 const routes: Routes = [
@@ -43,6 +44,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent},
   { path: 'mypackage', component: MypackageComponent},
   { path: 'view-test/:_id', component: MypackageComponent},
+  { path: 'viewall', component: ViewAllComponent},
 
 
   { path: '', redirectTo: '/login', pathMatch: 'full' },

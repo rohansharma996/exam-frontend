@@ -1,0 +1,29 @@
+table{
+    background: #ddd;
+    width:100%;
+}
+
+th{
+    padding-left:0px;
+    min-width: 150px;
+    text-align: center;
+}
+
+.box{
+    border: 1px solid black;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #F4F6F9;
+}
+tr{
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+}
+th,td{
+    align-content: center;
+    justify-content: center;
+    
+
+}

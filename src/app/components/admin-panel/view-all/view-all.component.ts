@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalService } from './../../../services/local.service';
 
 @Component({
   selector: 'app-view-all',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewAllComponent implements OnInit {
 
-  constructor() { }
 
+  tests:any;
+  constructor(private local:LocalService) { }
+
+  
   ngOnInit() {
+    this.getTest();
   }
 
+  getTest(){
+    this.local.getTest().subscribe(res => {
+      this.tests = res;
+    },err => {
+      console.log(err);
+    })
+  }
 }

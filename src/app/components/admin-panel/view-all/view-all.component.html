@@ -1,3 +1,54 @@
-<p>
-  view-all works!
-</p>
+<app-header></app-header>
+<div class="container">
+    <div class="row mt-3 mb-3 box">
+    <div class="col-12 col-md-12">
+      <table class="mb-2 mt-2">
+          <tr>
+            <th>Test</th>
+            <th>Subject</th>
+            <th>Allowed Time</th>
+            <th>Questions</th>
+          </tr>
+          <tr *ngFor="let tes of tests">
+            <th>{{tes.testNo}}</th>
+            <th>{{tes.subject}}</th>
+            <th>{{tes.allowed_time}}</th>
+            <th data-toggle="modal" data-target="#addquestion"><strong>Add Questions</strong></th>
+          </tr>
+      </table>
+    </div>
+    </div>
+  </div>
+
+  <!-- Add Questions Modal    -->
+
+  <div id="addquestion" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title"><strong>Add Questions</strong></div>
+           <span style="cursor: pointer;" data-dismiss="modal"><strong>X</strong></span>
+          </div>
+          <div class="modal-body">
+            
+            <div class="form-group">
+              <label for="question"><strong>Question :</strong></label>
+              <textarea name="question" [(ngModel)]="question" id="question" class="form-control" placeholder="Type Question Here"></textarea>
+
+              <input type="text" name="option1" class="form-control" id="option1" [(ngModel)]="A" placeholder="Option 1">
+              <input type="text" name="option2" class="form-control" id="option2" [(ngModel)]="B"  placeholder="Option 2">
+              <input type="text" name="option3" class="form-control" id="option3" [(ngModel)]="C"  placeholder="Option 3">
+              <input type="text" name="option4" class="form-control" id="option4" [(ngModel)]="D"  placeholder="Option 4">
+            </div>
+
+            <div class="form-group">
+              <label for="correct"><strong>Correct :</strong></label>
+              <input type="text" name="correct" class="form-control" id="correct" [(ngModel)]="correct" placeholder="Correct Answer">
+            </div>
+            
+            <button  class="btn btn-primary" (click)="addQuestion">Submit</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
